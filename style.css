@@ -1,0 +1,80 @@
+:root {
+  --nck-blue: #0d47a1;
+  --nck-light: #e3f2fd;
+  --success: #2e7d32;
+  --danger: #c62828;
+  --warn: #f9a825;
+  --answered: #9e9e9e;
+}
+* { box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+body { margin: 0; background: #f5f5f5; font-size: 16px; } /* FIX: base font up */
+
+header { background: var(--nck-blue); color: white; padding: 12px 20px; display: flex; justify-content: space-between; font-weight: bold; font-size: 17px; }
+
+.container { display: flex; height: calc(100vh - 52px); position: relative; } /* FIX: for sidebar layering */
+
+.sidebar {
+  width: 260px; background: white; border-right: 1px solid #ddd;
+  transition: 0.3s; display: flex; flex-direction: column;
+  position: relative; z-index: 1000; /* FIX: always on top */
+}
+.sidebar.minimized { width: 50px; }
+.sidebar.minimized button span { display: none; }
+
+.sidebar-header {
+  padding: 12px 10px; 
+  background: #26a69a; 
+  color: black; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; /* centers vertically */
+  font-weight: bold; 
+  font-size: 18px;
+  position: relative;
+  z-index: 1002; /* brings it in front */
+  min-height: 50px;
+}
+.menu-btn {
+  font-size: 26px; 
+  background: transparent; /* FIX: no blue override */
+  border: none; 
+  color: #7e57c2; 
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  z-index: 1002; /* ensures it's clickable and on top */
+}
+
+.sidebar button {
+  padding: 14px 12px; border: none; background: none; text-align: left;
+  cursor: pointer; border-bottom: 1px solid #eee;
+  color: var(--nck-blue); font-weight: 600; font-size: 16px; /* FIX: bigger + color */
+}
+.sidebar button:hover { background: var(--nck-light); }
+
+.main { flex: 1; padding: 20px; overflow-y: auto; font-size: 17px; } /* FIX: slightly bigger */
+.main h2 { font-size: 24px; }
+.main h3 { font-size: 20px; }
+
+.card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); max-width: 900px; margin: auto; }
+.center { text-align: center; }
+
+.q-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; margin: 15px 0; }
+.q-grid button { padding: 8px; border: 1px solid #ccc; background: var(--nck-blue); color:white; border-radius: 4px; cursor: pointer; font-size: 14px; }
+.q-grid button.answered { background: var(--answered); color:white; }
+.q-grid button.skipped { background: var(--danger); color:white; }
+.q-grid button.current { outline: 3px solid var(--warn); }
+
+.options label { display: block; padding: 10px; margin: 8px 0; border: 1px solid #ddd; border-radius: 5px; cursor: pointer; font-size: 16px; } /* question font stays normal */
+.options label.correct { border-color: var(--success); background: #e8f5e9; }
+.options label.wrong { border-color: var(--danger); background: #ffebee; }
+
+.rationale { margin-top: 15px; padding: 12px; background: var(--nck-light); border-left: 4px solid var(--nck-blue); display: none; font-size: 16px; } /* FIX: rationale back */
+
+.nav-btns { display: flex; justify-content: space-between; margin-top: 20px; }
+button { padding: 10px 18px; border: none; border-radius: 5px; cursor: pointer; background: var(--nck-blue); color: white; font-size: 16px; }
+button:disabled { background: #aaa; }
+
+.timer { font-size: 20px; font-weight: bold; color: var(--danger); text-align: right; }
+.code-box { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.topic-btn { padding: 15px; background: var(--nck-light); border: 1px solid var(--nck-blue); color: var(--nck-blue); font-size: 17px; font-weight: 600; }
