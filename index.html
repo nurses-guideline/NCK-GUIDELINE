@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCK Guideline Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">NCK GUIDELINE PORTAL</div>
+  <div id="header-info">Candidate Portal</div>
+</header>
+
+<div class="container">
+  <div class="sidebar minimized" id="sidebar">
+    <div class="sidebar-header">
+      <span>Menu</span>
+      <button class="menu-btn" onclick="toggleSidebar()">≡</button> <!-- FIX: always visible -->
+    </div>
+    <button onclick="goTo('revisionCats')"><span> Revision Mode</span></button>
+    <button onclick="goTo('predictionSelect')"><span>Prediction Questions</span></button>
+    <button onclick="goTo('testSelect')"><span>Test Mode</span></button>
+    <button onclick="goTo('analytics')"><span>NCK Styling & Analytics</span></button>
+    <button onclick="window.open('https://wa.me/254796709635 ?text=Hello%20NCK%20Support', '_blank')">
+  <span>Contact Us</span>
+</button>
+  </div>
+
+  <div class="main" id="main">
+    <div id="home" class="card center">
+      <h2>Welcome to NCK Guideline</h2>
+      <p style="font-size:18px; line-height:1.6">Prepare smart. Practice like real NCK. <br>
+      We’re rooting for you — Go in there and pass with excellence! <br><b>All the best in August 2026 💪</b></p>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
